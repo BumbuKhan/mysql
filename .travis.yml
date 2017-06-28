@@ -14,7 +14,7 @@ node_js:
   - "7.9"
 env:
   global:
-    - CXX=g++-4.7
+    - CXX=g++-4.6
   matrix:
     - "DOCKER_MYSQL_TYPE=mysql DOCKER_MYSQL_VERSION=5.7"
 matrix:
@@ -34,7 +34,7 @@ dist: trusty
 addons:
   apt:
     packages:
-      - g++-4.7
+      - g++-4.6
 sudo: required
 services:
   - docker
