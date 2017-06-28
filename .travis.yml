@@ -13,7 +13,10 @@ node_js:
   - "6.10"
   - "7.9"
 env:
-  - "DOCKER_MYSQL_TYPE=mysql DOCKER_MYSQL_VERSION=5.7"
+  global:
+    - CXX="g++ -Wno-unused-local-typedefs"
+  matrix:
+    - "DOCKER_MYSQL_TYPE=mysql DOCKER_MYSQL_VERSION=5.7"
 matrix:
   include:
     - node_js: "6.10"
