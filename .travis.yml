@@ -14,7 +14,7 @@ node_js:
   - "7.9"
 env:
   global:
-    - CXX="g++ -Wno-unused-local-typedefs"
+    - CXX=g++-4.7
   matrix:
     - "DOCKER_MYSQL_TYPE=mysql DOCKER_MYSQL_VERSION=5.7"
 matrix:
@@ -31,6 +31,10 @@ matrix:
       env: "DOCKER_MYSQL_TYPE=mariadb DOCKER_MYSQL_VERSION=10.1"
 
 dist: trusty
+addons:
+  apt:
+    packages:
+      - g++-4.7
 sudo: required
 services:
   - docker
